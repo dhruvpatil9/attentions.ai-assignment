@@ -85,7 +85,7 @@ class NewsAgent:
 class ItineraryAgent:
     def __init__(self):
         # Initialize Hugging Face pipeline for text generation with NeoGPT model
-        self.generator = pipeline("text-generation", model="NeoGPT", device=0 if torch.cuda.is_available() else -1)
+        self.generator = pipeline("text-generation", model="meta-llama/Llama-3.2-3B-Instruct", device=0 if torch.cuda.is_available() else -1)
 
     def generate_itinerary(self, preferences, weather_info, news_info, chat_history, graph_info):
         # Format graph info as context for prompt
